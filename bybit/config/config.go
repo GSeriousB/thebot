@@ -15,19 +15,6 @@ type JwtConfig struct {
 	JWT_REFRESH_EXP    int    `env:"JWT_REFRESH_EXP"`
 }
 
-type DatabaseConfig struct {
-	DB_HOST                    string `env:"DB_HOST"`
-	DB_PORT                    string `env:"DB_PORT"`
-	DB_USER                    string `env:"DB_USER"`
-	DB_NAME                    string `env:"DB_NAME"`
-	DB_PASSWORD                string `env:"DB_PASSWORD"`
-	DB_MAX_OPEN_CONNECTION     int    `env:"DB_MAX_OPEN_CONNECTION"`
-	DB_MAX_IDLE_CONNECTION     int    `env:"DB_MAX_IDLE_CONNECTION"`
-	DB_CONNECTION_MAX_LIFETIME int    `env:"DB_CONNECTION_MAX_LIFETIME"`
-	DB_LOGMODE                 bool   `env:"DB_LOGMODE"`
-	DB_SCHEMA                  string `env:"DB_SCHEMA"`
-}
-
 type HTTPServerConfig struct {
 	HTTPSERVER_LISTEN                      string `env:"HTTPSERVER_LISTEN"`
 	HTTPSERVER_PORT                        string `env:"HTTPSERVER_PORT"`
@@ -55,7 +42,6 @@ type ByBitConfig struct {
 type CoreServiceConfig struct {
 	Environment      string `env:"ENVIRONMENT"`
 	ProjectVersion   string `env:"VERSION"`
-	DatabaseConfig   DatabaseConfig
 	HTTPServerConfig HTTPServerConfig
 	LogConfig        LogConfig
 	ByBitConfig      ByBitConfig
