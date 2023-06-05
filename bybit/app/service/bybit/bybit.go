@@ -86,7 +86,7 @@ func (u ByBit) DoBullishConfirmationPlus(ctx context.Context, req request.Webhoo
 		Category:    "linear",
 		Symbol:      ticker,
 		IsLeverage:  0,
-		Side:        "Bull",
+		Side:        "Buy",
 		OrderType:   "Limit",
 		Qty:         balance,
 		TimeInForce: "GoodTillCancel",
