@@ -75,11 +75,17 @@ func (u ByBit) DoBullishConfirmationPlus(ctx context.Context, req request.Webhoo
 	log := logger.Logger(ctx)
 
 	// Here, 'ticker' is the asset you want to trade.
-	ticker := req.Ticker
-	balance, err := u.getBalance(ctx)
-	if err != nil {
-		log.Errorf("Failed to get balance:", err)
-		return err
+	ticker := fmt.Sprintf("%s.P", req.Ticker)
+	var balance string
+	if req.Balance == "" {
+		b, err := u.getBalance(ctx)
+		if err != nil {
+			log.Errorf("Failed to get balance:", err)
+			return err
+		}
+		balance = b
+	} else {
+		balance = req.Balance
 	}
 
 	if err := u.placeOrder(ctx, ByBitRequest{
@@ -116,11 +122,17 @@ func (u ByBit) DoBearishConfirmationPlus(ctx context.Context, req request.Webhoo
 	log := logger.Logger(ctx)
 
 	// Here, 'ticker' is the asset you want to trade.
-	ticker := req.Ticker
-	balance, err := u.getBalance(ctx)
-	if err != nil {
-		log.Errorf("Failed to get balance:", err)
-		return err
+	ticker := fmt.Sprintf("%s.P", req.Ticker)
+	var balance string
+	if req.Balance == "" {
+		b, err := u.getBalance(ctx)
+		if err != nil {
+			log.Errorf("Failed to get balance:", err)
+			return err
+		}
+		balance = b
+	} else {
+		balance = req.Balance
 	}
 
 	if err := u.placeOrder(ctx, ByBitRequest{
@@ -157,11 +169,17 @@ func (u ByBit) DoConfirmationPlusExistBullish(ctx context.Context, req request.W
 	log := logger.Logger(ctx)
 
 	// Here, 'ticker' is the asset you want to trade.
-	ticker := req.Ticker
-	balance, err := u.getBalance(ctx)
-	if err != nil {
-		log.Errorf("Failed to get balance:", err)
-		return err
+	ticker := fmt.Sprintf("%s.P", req.Ticker)
+	var balance string
+	if req.Balance == "" {
+		b, err := u.getBalance(ctx)
+		if err != nil {
+			log.Errorf("Failed to get balance:", err)
+			return err
+		}
+		balance = b
+	} else {
+		balance = req.Balance
 	}
 
 	if err := u.placeOrder(ctx, ByBitRequest{
@@ -185,11 +203,17 @@ func (u ByBit) DoConfirmationPlusExistBearish(ctx context.Context, req request.W
 	log := logger.Logger(ctx)
 
 	// Here, 'ticker' is the asset you want to trade.
-	ticker := req.Ticker
-	balance, err := u.getBalance(ctx)
-	if err != nil {
-		log.Errorf("Failed to get balance:", err)
-		return err
+	ticker := fmt.Sprintf("%s.P", req.Ticker)
+	var balance string
+	if req.Balance == "" {
+		b, err := u.getBalance(ctx)
+		if err != nil {
+			log.Errorf("Failed to get balance:", err)
+			return err
+		}
+		balance = b
+	} else {
+		balance = req.Balance
 	}
 
 	if err := u.placeOrder(ctx, ByBitRequest{

@@ -11,5 +11,6 @@ type WebhookRequest struct {
 		Close  float64 `json:"close"`
 		Volume int     `json:"volume"`
 	} `json:"ohlcv"`
-	Bartime int64 `json:"bartime"`
+	Bartime int64  `json:"bartime"`
+	Balance string `json:"balance"`
 }
